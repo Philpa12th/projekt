@@ -1,0 +1,66 @@
+/* Stripoteka – stilovi. Boje su CSS varijable na vrhu; fontovi Title i Jaw su u src/assets/fonts. */
+@font-face{font-family:Title;src:url(./assets/fonts/Title.ttf) format("truetype")}
+@font-face{font-family:Jaw;src:url(./assets/fonts/Jaw.ttf) format("truetype")}
+:root{--pozadina:#0a0908;--kutija:#16130e;--linija:#3a3220;--tekst:#f5f0e6;--prigusen:#9b917d;--zlato:#ffd966;--zlato-tamno:#8a6200;--crvena:#ff6b5e;--zelena:#5fd08f;--sans:system-ui, "Segoe UI", Roboto, Arial, sans-serif}
+*{box-sizing:border-box}
+body{background:var(--pozadina);color:var(--tekst);font-family:var(--sans);-webkit-font-smoothing:antialiased;margin:0;line-height:1.5}
+h1,h2{margin:0;font-family:Title,sans-serif;font-weight:400}
+h1{text-align:center;font-size:clamp(1.8rem,5vw,3rem)}
+h2{margin:32px 0 14px;font-size:1.5rem}
+.zlatno{background:linear-gradient(to bottom, var(--zlato-tamno), var(--zlato));color:#0000;-webkit-background-clip:text;background-clip:text;padding:5px;font-style:oblique;line-height:1.2;display:inline-block}
+h1.zlatno{display:block}
+.prigusen{color:var(--prigusen)}
+.zaglavlje{border-bottom:1px solid var(--linija);background:var(--pozadina);z-index:5;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:16px clamp(16px,4vw,40px);display:flex;position:sticky;top:0}
+.logo{color:var(--zlato);cursor:pointer;background:0 0;border:0;align-items:center;gap:12px;padding:0;font-family:Title,sans-serif;font-size:1.6rem;display:flex}
+.autor{font-family:var(--sans);color:var(--prigusen);border-left:1px solid var(--linija);padding-left:14px;font-size:.85rem}
+.izbornik{gap:6px;display:flex}
+.izbornik button{color:var(--tekst);font-family:"Jaw", var(--sans);cursor:pointer;background:0 0;border:1px solid #0000;border-radius:8px;padding:8px 16px;font-size:1rem}
+.izbornik button:hover{border-color:var(--linija)}
+.izbornik button.aktivna{border-color:var(--zlato);color:var(--zlato)}
+.sadrzaj{max-width:1100px;min-height:70vh;margin:0 auto;padding:32px clamp(16px,4vw,32px) 64px}
+.podnozje{text-align:center;color:var(--prigusen);border-top:1px solid var(--linija);padding:22px;font-size:.9rem}
+.naslovnica{margin-bottom:28px}
+.uvod{font-family:"Jaw", var(--sans);text-align:center;max-width:640px;margin:12px auto 0;font-size:1.1rem}
+.kutije{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;display:grid}
+.kutija{background:var(--kutija);border:1px solid var(--linija);border-radius:12px}
+.statistika{text-align:left;color:var(--tekst);font:inherit;cursor:pointer;flex-direction:column;gap:4px;padding:20px;transition:border-color .15s;display:flex}
+.statistika:hover{border-color:var(--zlato)}
+.statistika b{color:var(--zlato);font-family:Title,sans-serif;font-size:2rem;font-weight:400;line-height:1.1}
+.statistika span{color:var(--prigusen)}
+.glava{flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin:8px 0 20px;display:flex}
+.glava h1{text-align:left}
+.tablica-omot{overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th{text-align:left;letter-spacing:.08em;text-transform:uppercase;color:var(--prigusen);border-bottom:1px solid var(--linija);white-space:nowrap;padding:14px 16px;font-size:.75rem;font-weight:600}
+td{border-bottom:1px solid var(--linija);padding:14px 16px}
+tr:last-child td{border-bottom:none}
+.akcije-reda{white-space:nowrap;text-align:right}
+.akcije-reda .veza+.veza{margin-left:14px}
+.popuna{margin:0;padding:24px}
+.oznaka{background:var(--linija);color:var(--prigusen);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:600;display:inline-block}
+.oznaka.ok{color:var(--zelena);background:#16301f}
+.alat{flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:16px;display:flex}
+.alat input[type=search]{flex:1;min-width:220px}
+.kvacica-filtar{color:var(--tekst);flex-direction:row;align-items:center;gap:8px}
+.veza{color:var(--zlato);font:inherit;cursor:pointer;text-underline-offset:3px;background:0 0;border:none;padding:0;text-decoration:underline}
+.veza:hover{color:var(--tekst)}
+.veza.opasno{color:var(--crvena)}
+.gumb{background:var(--zlato);color:#111;border:1px solid var(--zlato);font:inherit;cursor:pointer;border-radius:8px;padding:10px 20px;font-weight:700}
+.gumb:hover{filter:brightness(1.1)}
+.gumb.sporedni{color:var(--tekst);border-color:var(--linija);background:0 0}
+.obrazac{flex-direction:column;gap:16px;margin-bottom:24px;padding:24px;display:flex}
+.obrazac h2{margin:0}
+.mreza-obrasca{grid-template-columns:1fr 1fr;gap:16px;display:grid}
+.mreza-obrasca .puna{grid-column:1/-1}
+label{color:var(--prigusen);flex-direction:column;gap:6px;font-size:.9rem;display:flex}
+label.kvacica{color:var(--tekst);flex-direction:row;align-items:center;gap:10px;padding-top:22px}
+input,select,textarea{font:inherit;color:var(--tekst);background:var(--pozadina);border:1px solid var(--linija);border-radius:8px;padding:10px 12px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--zlato);border-color:var(--zlato)}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--zlato);padding:0}
+em{color:var(--crvena);font-size:.85rem;font-style:normal}
+.akcije{gap:10px;display:flex}
+.upozorenje{border:1px solid var(--crvena);color:var(--crvena);border-radius:8px;margin-bottom:16px;padding:12px 16px}
+@media (width<=720px){.mreza-obrasca{grid-template-columns:1fr}
+.autor{display:none}
+}
+
